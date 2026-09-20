@@ -37,13 +37,13 @@ android {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    compilerOptions {
-        jvmTarget.set(
-            org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
-        )
-        allWarningsAsErrors.set(false)
-    }
+kotlinOptions {
+    jvmTarget = "17"
+    allWarningsAsErrors = false
+    freeCompilerArgs += listOf(
+        "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
+        "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api"
+    )
 }
 
 buildFeatures {
