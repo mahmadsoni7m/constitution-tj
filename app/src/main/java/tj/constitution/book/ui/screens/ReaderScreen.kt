@@ -259,7 +259,7 @@ private fun Modifier.clickableGoTo(
     pagerState: androidx.compose.foundation.pager.PagerState,
     target: Int
 ): Modifier = this.then(
-    Modifier.clickable(indication = null, interactionSource = null) {
+    Modifier.clickable {
         if (target in 0 until pagerState.pageCount) {
             scope.launch { pagerState.animateScrollToPage(target) }
         }
