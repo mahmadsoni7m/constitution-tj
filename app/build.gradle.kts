@@ -37,14 +37,18 @@ android {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
-kotlinOptions {
-    jvmTarget = "17"
-    allWarningsAsErrors = false
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(
+            org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+        )
+        allWarningsAsErrors.set(false)
+    }
 }
 
-    buildFeatures {
-        compose = true
-    }
+buildFeatures {
+    compose = true
+}
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.14"
