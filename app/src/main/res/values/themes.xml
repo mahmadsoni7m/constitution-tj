@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.Konstitutsiya" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#1B2430</item>
+        <item name="android:windowBackground">#F7F3EA</item>
+    </style>
+</resources>
